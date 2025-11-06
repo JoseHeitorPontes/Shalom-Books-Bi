@@ -12,6 +12,22 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid">
+                <h4 class="text-light">Shalom Books Bi</h4>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white">Livros</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         @vite([
             "resources/js/app.js"
         ])
