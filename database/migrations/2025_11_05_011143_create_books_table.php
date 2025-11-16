@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('description');
             $table->string('publisher');
             $table->string('international_standard_book_number', 13);
-            $table->date('publication_year');
             $table->string('image')->nullable();
             $table->decimal('cost_price', 10, 2)->default(0);
             $table->decimal('sale_price', 10, 2)->default(0);

@@ -13,7 +13,6 @@ class Book extends Model
         'description',
         'publisher',
         'international_standard_book_number',
-        'publication_year',
         'image',
         'cost_price',
         'sale_price',

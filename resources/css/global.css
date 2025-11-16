@@ -1,0 +1,21 @@
+textarea {
+    resize: none !important;
+}
+
+.book-card {
+    width: 20%;
+    padding: 1rem;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+
+.book-image {
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+.book-description {
+    text-align: justify;
+}
