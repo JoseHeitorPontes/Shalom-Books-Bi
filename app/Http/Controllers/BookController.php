@@ -30,8 +30,35 @@ class BookController extends Controller
             ->with('success', 'Livro cadastrado com sucesso!');
     }
 
+    public function update(Request $request, int $id)
+    {
+        $data = $request->all();
+
+        Book::update($data);
+
+        return redirect()->route('livros.index')
+            ->with('success', 'Livro editado com sucesso!');
+    }
+
+    public function destroy(int $id)
+    {
+        Book::destroy($id);
+
+        return redirect()->route('livros.index')
+            ->with('success', 'Livro excluido com sucesso!');
+    }
+
     public function newBook()
     {
         return view('pages.books.new_book');
+    }
+
+    public function editBook(int $id)
+    {
+        $book = Book::findOrFail($id);
+
+        return view('pages.books.edit_book', [
+            'book' => $book,
+        ]);
     }
 }
