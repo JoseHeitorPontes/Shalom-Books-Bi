@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('body')
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end mb-4">
         <a class="btn btn-primary" href="livros/novo">Novo livro</a>
     </div>
 

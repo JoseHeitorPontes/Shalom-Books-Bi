@@ -24,6 +24,10 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/livros">Livros</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/clientes">Clientes</a>
+                    </li>
                 </ul>
             </div>
         </nav>
