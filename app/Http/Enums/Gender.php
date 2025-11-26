@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\Http\Enums;
+
 enum Gender: string {
     case Male = 'M';
     case Female = 'F';
@@ -10,9 +12,9 @@ enum Gender: string {
     public function messages(): string
     {
         return match ($this) {
-            Gender::Male => 'Masculino',
-            Gender::Female => 'Feminino',
-            Gender::Other => 'Outro',
+            self::Male => 'Masculino',
+            self::Female => 'Feminino',
+            self::Other => 'Outro',
         };
     }
 }
