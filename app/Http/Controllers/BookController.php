@@ -32,9 +32,10 @@ class BookController extends Controller
 
     public function update(Request $request, int $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
-        Book::update($data);
+        $book = Book::findOrFail($id);
+        $book->update($data);
 
         return redirect()->route('livros.index')
             ->with('success', 'Livro editado com sucesso!');
