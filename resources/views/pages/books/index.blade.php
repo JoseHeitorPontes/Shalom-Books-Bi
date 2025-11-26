@@ -15,7 +15,7 @@
         </div>
     @endif
     
-    <div class="w-100 d-flex gap-2">
+    <div class="w-100 d-flex gap-2 mb-4">
         @foreach ($books as $book)
             <div class="book-card">
                 <img src="{{ asset('images/book.png') }}" class="mb-2 book-image" />
@@ -36,5 +36,9 @@
                 </div>
             </div>
         @endforeach
+    </div>
+
+    <div class="d-flex justify-content-center">
+        {{ $books->links() }}
     </div>
 @endsection

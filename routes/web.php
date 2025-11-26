@@ -2,11 +2,9 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SaleController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::controller(BookController::class)->prefix('/livros')->group(function () {
     Route::get('/', 'index')->name('livros.index');
@@ -22,6 +20,18 @@ Route::controller(CustomerController::class)->prefix('/clientes')->group(functio
     Route::post('/', 'store')->name('clientes.store');
     Route::get('/novo', 'newCustomer')->name('clientes.newCustomer');
     Route::get('/{id}/editar', 'editCustomer')->name('clientes.editCustomer');
-    Route::post('/{id}', 'update')->name('clientes.update');
+    Route::put('/{id}', 'update')->name('clientes.update');
     Route::post('/{id}', 'destroy')->name('clientes.destroy');
 });
+
+Route::controller(SaleController::class)->prefix('/vendas')->group(function () {
+    Route::get('/', 'index')->name('vendas.index');
+    Route::post('/', 'store')->name('vendas.store');
+    Route::get('/nova', 'newSale')->name('vendas.newSale');
+    Route::get('/{id}/editar', 'editSale')->name('clientes.editSale');
+    Route::get('/{id}/detalhes', 'viewDetails')->name('vendas.viewDetails');
+    Route::post('/{id}', 'update')->name('vendas.update');
+    Route::post('/{id}', 'destroy')->name('vendas.destroy');
+});
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');

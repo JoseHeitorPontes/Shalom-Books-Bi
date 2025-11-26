@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="w-100 d-flex justify-content-center">
-        <form class="w-50" method="POST" action="{{ route('clientes.update') }}">
+        <form class="w-50" method="POST" action="{{ route('clientes.update', $customer->id) }}">
             @csrf
             @method('PUT')
 
