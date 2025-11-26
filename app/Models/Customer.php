@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Http\Enums\Gender;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
@@ -16,4 +18,14 @@ class Customer extends Model
         'birthdate',
         'gender',
     ];
+
+    public function getBirthdateFormattedAttribute()
+    {
+        return Carbon::parse($this->birthdate)->format('d/m/Y');
+    }
+
+    public function getGenderFormattedAttribute()
+    {
+        return Gender::from($this->gender)->messages();
+    }
 }
